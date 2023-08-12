@@ -19,8 +19,10 @@ const config: Config = {
         'body': ['var(--font-roboto-mono)'],
       },
       colors: {
-        beige: '#ffe9d2'
-      }
+        beige: '#ffe9d2',
+        darkest: '#1e1e1e',
+        darker: '#252525',
+      },
     },
   },
   plugins: [],

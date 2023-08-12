@@ -80,28 +80,28 @@ const Splash = () => {
 
 const Carousels = () => {
   return (
-    <section className='min-h-screen flex flex-col gap-8 justify-center items-stretch bg-gray-900'>
+    <section className='min-h-screen flex flex-col gap-8 justify-center items-stretch bg-darkest'>
       <div className="flex flex-col items-center gap-2">
         <p className="font-display text-2xl">RECENTLY LISTED ON XP</p>
         <p className="font-body text-xs">Sign in to view all avaiable tickets</p>
       </div>
       <Carousel>
+        <EventCard name="THE OFFSPRING, SIMPLE PLAN & SUM 41" location="Soldier Field" price={130} imageSrc="/images/the_pretenders.jpg" />
+        <CityCard city="CHICAGO" ticketCount={7290} icon="/images/chicago.png" />
         <EventCard name="PHISH" location="Saratoga" price={130} imageSrc="/images/the_pretenders.jpg" />
-        <CityCard city="CHICAGO" ticketCount={7290} icon="" />
-        <EventCard name="PHISH" location="Saratoga" price={130} imageSrc="/images/the_pretenders.jpg" />
-        <EventCard name="PHISH" location="Saratoga" price={130} imageSrc="/images/the_pretenders.jpg" />
+        <EventCard name="KENDRICK LAMAR" location="Soldier Field" price={130} imageSrc="/images/the_pretenders.jpg" />
       </Carousel>
       <Carousel>
+        <EventCard name="BLACKHAWKS VS. FLAMES" location="Saratoga" price={130} imageSrc="/images/chicago_bears.jpg" />
         <EventCard name="PHISH" location="Saratoga" price={130} imageSrc="/images/the_pretenders.jpg" />
-        <EventCard name="PHISH" location="Saratoga" price={130} imageSrc="/images/the_pretenders.jpg" />
-        <CityCard city="CHICAGO" ticketCount={7290} icon="" />
-        <EventCard name="PHISH" location="Saratoga" price={130} imageSrc="/images/the_pretenders.jpg" />
+        <CityCard city="NEW YORK" ticketCount={7290} icon="/images/new_york.png" />
+        <EventCard name="MANUEL TURIZO" location="Saratoga" price={130} imageSrc="/images/manuel_torizo.jpg" />
       </Carousel>
       <Carousel>
-        <CityCard city="CHICAGO" ticketCount={7290} icon="" />
+        <CityCard city="MIAMI" ticketCount={7290} icon="/images/miami.png" />
+        <EventCard name="DAVE CHAPPELLE" location="Saratoga" price={130} imageSrc="/images/dave_chappelle.jpg" />
         <EventCard name="PHISH" location="Saratoga" price={130} imageSrc="/images/the_pretenders.jpg" />
-        <EventCard name="PHISH" location="Saratoga" price={130} imageSrc="/images/the_pretenders.jpg" />
-        <EventCard name="PHISH" location="Saratoga" price={130} imageSrc="/images/the_pretenders.jpg" />
+        <EventCard name="NATE BARZGATE" location="Saratoga" price={130} imageSrc="/images/the_pretenders.jpg" />
       </Carousel>
     </section>
   )
@@ -109,7 +109,7 @@ const Carousels = () => {
 
 const Carousel = ({ children }) => {
   return (
-    <div className="flex-1 flex flex-row justify-between items-stretch gap-4">
+    <div className="flex-1 flex flex-row justify-between items-stretch gap-6">
       { children }
     </div>
   )
@@ -117,18 +117,23 @@ const Carousel = ({ children }) => {
 
 const CityCard = ({ city, ticketCount, icon }) => {
   return (
-    <div className="flex-1 flex flex-col">
-      <div className="basis-2/3 flex flex-row items-stretch">
-        <div className="flex flex-col justify-end">
-          <p className="font-body text-xs">SEE ALL</p>
-          <p className="font-body text-xs">{ticketCount} TICKETS IN</p>
-        </div>
-        <div className="flex flex-col justify-start items-end">
-          <p>****</p>
+    <div className="flex-1 p-8 flex flex-col justify-between border border-white rounded-xl bg-darker">
+      <div className="basis-1/2 pb-3 flex flex-row justify-end items-stretch">
+        <div className="basis-1/4 relative">
+          <Image src={icon} fill objectFit="contain" objectPosition="top right" style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
         </div>
       </div>
-      <div className="basis-1/3">
-        <h3 className="font-display">{city}</h3>
+      <div className="basis-1/2 flex flex-col justify-end gap-3">
+        <div className="flex flex-col justify-end">
+          <p className="font-body text-sm font-light">SEE ALL</p>
+          <p className="font-body text-sm font-light">{ticketCount} TICKETS IN</p>
+        </div>
+        <div className="flex flex-row justify-start items-stretch gap-4">
+          <h3 className="font-display text-4xl underline underline-offset-8" style={{textShadow: '0px 0px 40px rgba(247, 240, 199, 0.75)'}}>{city}</h3>
+          <div className="flex-1 relative">
+            <Image src="/images/arrow.png" fill objectFit="contain" objectPosition="left" style={{ filter: 'drop-shadow(0 0 40px rgba(247, 240, 199, 0.75))'}}/>
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -136,15 +141,15 @@ const CityCard = ({ city, ticketCount, icon }) => {
 
 const EventCard = ({ name, location, price, imageSrc }) => {
   return (
-    <div className="flex-1 flex flex-col border border-white/25 rounded-lg bg-gray-800 overflow-hidden">
+    <div className="flex-1 flex flex-col border border-white/25 rounded-lg bg-darker overflow-hidden">
       <div className="basis-3/5 relative">
         <Image src={imageSrc} alt="" fill objectFit="cover" objectPosition="top" />
       </div>
-      <div className="basis-2/5">
-        <h3 className="font-display">{name}</h3>
+      <div className="basis-2/5 px-6 pt-5 pb-4">
+        <h3 className="font-display text-xl">{name}</h3>
         <div className="flex flex-col">
           <div className="flex flex-row justify-between items-center">
-            <h3 className="font-body text-xs">{location}</h3>
+            <h3 className="font-body text-sm font-light">{location}</h3>
             <div className="flex flex-col">
               <h3 className="font-body text-xs">from</h3>
               <h3 className="font-body text-xs">{price} USDC</h3>
