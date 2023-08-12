@@ -8,6 +8,7 @@ export default function Home() {
       <Splash /> 
       <Carousels />
       <Comparison />
+      <CTA />
       <Footer />
     </main>
   )
@@ -80,7 +81,7 @@ const Splash = () => {
 
 const Carousels = () => {
   return (
-    <section className='min-h-screen flex flex-col gap-8 justify-center items-stretch bg-darkest'>
+    <section className='min-h-screen py-16 flex flex-col gap-8 justify-center items-stretch bg-darkest'>
       <div className="flex flex-col items-center gap-2">
         <p className="font-display text-2xl">RECENTLY LISTED ON XP</p>
         <p className="font-body text-xs">Sign in to view all avaiable tickets</p>
@@ -163,39 +164,76 @@ const EventCard = ({ name, location, price, imageSrc }) => {
 
 const Comparison = () => {
   return (
-    <section className='min-h-screen flex flex-col justify-center items-center bg-gray-900'>
-      <div className='flex flex-col gap-16'>
-        <div className='flex flex-row justify-center'>
-          <div className="w-1/2">BIG ROTATING CUBE THING</div>
-          <div className="flex flex-col gap-8 items-start">
-            <h3 className="font-display text-4xl">YOU'RE GETTING HUSTLED BY WEB2 TICKET SITES</h3>
-            <p className="font-body">Maybe you paid way too much for your girlfriend's Taylor Swift tickets. Or, maybe you got scammed by those Lollpalooza tickets on Facebook, which you knew seemed shady but were too cheap to pass up.</p>
-            <p className="font-body">XP gibes you 100% authenticated tickets at the fairest most transparent prices by porting verified tickets from Web2 onto the blockchain using our proprietary Tamperproof technology.</p>
-            <button>
-              <p className="font-display text-md">LEARN MORE</p>
-            </button>
+    <section className='min-h-screen p-16 flex flex-row justify-center items-center gap-16 bg-darkest'>
+      <div className=" basis-2/5 max-w-md p-8 flex flex-col justify-between gap-4">
+        <EventCard name="NATE BARZGATE" location="Saratoga" price={130} imageSrc="/images/the_pretenders.jpg" />
+        <div className="flex flex-col gap-5">
+          <div className="px-7 py-3 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
+            <span className="font-body text-xs text-red-600" style={{textShadow: '0px 0px 40px rgba(255, 0, 0, 0.50)'}}>TICKETMASTER</span>
+            <span className="font-body text-xl font-extrabold leading-2 text-red-600">$654.85</span>
           </div>
-        </div>
-        <div className="p-8 flex flex-col items-center gap-4 border border-white/25 rounded-lg bg-white/25">
-          <h4 className="font-display">PRICE COMPARISON</h4>
-          <p className="font-body">Bruce Springsteen, Sep 1, 2023 @ Metlife Stadium, NJ</p>
-          <div className="flex flex-row gap-2">
-            <div className="px-4 py-2 flex flex-row gap-2 border border-red-500 rounded-md">
-              <span>TICKETMASTER</span><span>$654.85</span>
-            </div>
-            <div className="px-4 py-2 flex flex-row gap-2 border border-red-500 rounded-md">
-              <span>VIVID SEATS</span><span>$654.85</span>
-            </div>
-            <div className="px-4 py-2 flex flex-row gap-2 border border-red-500 rounded-md">
-              <span>TICKPICK</span><span>$550.00</span>
-            </div>
-            <div className="px-4 py-2 flex flex-row gap-2 border border-green-500 rounded-md">
-              <span>XP LOGO</span><span>$504.00</span>
-            </div>
+          <div className="px-7 py-3 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
+            <span className="font-body text-xs text-red-600" style={{textShadow: '0px 0px 40px rgba(255, 0, 0, 0.50)'}}>TICKETMASTER</span>
+            <span className="font-body text-xl font-extrabold leading-2 text-red-600">$654.85</span>
+          </div>
+          <div className="px-7 py-3 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
+            <span className="font-body text-xs text-red-600" style={{textShadow: '0px 0px 40px rgba(255, 0, 0, 0.50)'}}>TICKETMASTER</span>
+            <span className="font-body text-xl font-extrabold leading-2 text-red-600">$654.85</span>
+          </div>
+          <div className="px-4 py-2 flex flex-row gap-2 border border-green-500 rounded-md">
+            <span>XP LOGO</span><span>$504.00</span>
           </div>
         </div>
       </div>
+      <div className="basis-3/5 max-w-3xl px-16 py-10 flex flex-col gap-8 items-start rounded-xl bg-darker">
+        <h3 className="font-display text-4xl">
+          YOU'RE GETTING<br /> 
+          HUSTLED BY WEB2<br /> 
+          TICKET SITES
+        </h3>
+        <p className="font-body text-sm font-light leading-7">Maybe you paid way too much for your girlfriend's Taylor Swift tickets. Or, maybe you got scammed by those Lollpalooza tickets on Facebook, which you knew seemed shady but were too cheap to pass up.</p>
+        <p className="font-body text-sm font-light leading-7">XP gibes you 100% authenticated tickets at the fairest most transparent prices by porting verified tickets from Web2 onto the blockchain using our proprietary Tamperproof technology.</p>
+          <p className="font-display text-md">THIS IS THE WAY</p>
+          <p className="font-display text-md">WHY BLOCKCHAIN?</p>
+      </div>
     </section>
+  )
+}
+
+const CTA = () => {
+  return (
+    <section className='min-h-screen flex flex-col justify-center items-center gap-8 bg-darkest'>
+      <div className="flex flex-col items-center gap-2">
+        <h4 className="font-display text-md">JOIN US AS WE BUILD</h4>
+        <h3 className="font-display text-4xl">GET EARLY ACCESS TO XP</h3>
+        <p className="font-body text-sm font-light">An exclusive community of fans with access to 32,801 tickets in 89 cities awaits</p>
+      </div>
+      <div className="max-h-96 max-w-4xl w-full flex flex-row justify-between items-stretch gap-6">
+        <OptionsCard optionNumber={1} introText="BUY AN XP CHIP ON" title="TENSOR" icon="/images/tensor.png" />
+        <p className="flex flex-col justify-center font-body">OR</p>
+        <OptionsCard optionNumber={2} introText="JOIN OUR" title="WAITLIST" icon="/images/logo.png" />
+      </div>
+    </section>
+  )
+}
+
+const OptionsCard = ({ optionNumber, introText, title, icon }) => {
+  return (
+    <div className="flex-1 p-8 flex flex-col justify-between border border-white rounded-xl bg-darker">
+      <div className="basis-1/2 flex flex-row justify-between items-start relative">
+          <p className="font-body text-md font-light">OPTION {optionNumber}</p>
+          <Image src={icon} width={64} height={64} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
+      </div>
+      <div className="basis-1/2 flex flex-col justify-end gap-3">
+        <p className="font-body text-sm font-light">{introText}</p>
+        <div className="flex flex-row justify-start items-stretch gap-4">
+          <h3 className="font-display text-4xl underline underline-offset-8" style={{textShadow: '0px 0px 40px rgba(247, 240, 199, 0.75)'}}>{title}</h3>
+          <div className="flex-1 relative">
+            <Image src="/images/arrow.png" fill objectFit="contain" objectPosition="left" style={{ filter: 'drop-shadow(0 0 40px rgba(247, 240, 199, 0.75))'}}/>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
