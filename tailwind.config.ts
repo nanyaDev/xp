@@ -1,3 +1,4 @@
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -13,6 +14,13 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        'display': ['var(--font-sequel)'],
+        'body': ['var(--font-roboto-mono)'],
+      },
+      colors: {
+        beige: '#ffe9d2'
+      }
     },
   },
   plugins: [],
