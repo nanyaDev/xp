@@ -118,7 +118,7 @@ const Carousel = ({ children }) => {
 
 const CityCard = ({ city, ticketCount, icon }) => {
   return (
-    <div className="flex-1 p-8 flex flex-col justify-between border border-white rounded-xl bg-darker">
+    <div className="flex-1 p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-darker">
       <div className="basis-1/2 pb-3 flex flex-row justify-end items-stretch">
         <div className="basis-1/4 relative">
           <Image src={icon} fill objectFit="contain" objectPosition="top right" style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
@@ -142,7 +142,7 @@ const CityCard = ({ city, ticketCount, icon }) => {
 
 const EventCard = ({ name, location, price, imageSrc }) => {
   return (
-    <div className="flex-1 flex flex-col border border-white/25 rounded-lg bg-darker overflow-hidden">
+    <div className="flex-1 flex flex-col border border-light-beige rounded-lg bg-darker overflow-hidden">
       <div className="basis-3/5 relative">
         <Image src={imageSrc} alt="" fill objectFit="cover" objectPosition="top" />
       </div>
@@ -185,7 +185,7 @@ const Comparison = () => {
           </div>
         </div>
       </div>
-      <div className="basis-3/5 max-w-3xl px-16 py-10 flex flex-col gap-8 items-start rounded-xl bg-darker">
+      <div className="basis-3/5 max-w-3xl px-16 py-10 flex flex-col gap-8 items-start rounded-xl bg-darker border border-light-beige">
         <h3 className="font-display text-4xl">
           YOU'RE GETTING<br /> 
           HUSTLED BY WEB2<br /> 
@@ -208,7 +208,7 @@ const CTA = () => {
         <h3 className="font-display text-4xl">GET EARLY ACCESS TO XP</h3>
         <p className="font-body text-sm font-light">An exclusive community of fans with access to 32,801 tickets in 89 cities awaits</p>
       </div>
-      <div className="max-h-96 max-w-4xl w-full flex flex-row justify-between items-stretch gap-6">
+      <div className="w-full flex flex-row justify-center items-stretch gap-6">
         <OptionsCard optionNumber={1} introText="BUY AN XP CHIP ON" title="TENSOR" icon="/images/tensor.png" />
         <p className="flex flex-col justify-center font-body">OR</p>
         <OptionsCard optionNumber={2} introText="JOIN OUR" title="WAITLIST" icon="/images/logo.png" />
@@ -219,7 +219,7 @@ const CTA = () => {
 
 const OptionsCard = ({ optionNumber, introText, title, icon }) => {
   return (
-    <div className="flex-1 p-8 flex flex-col justify-between border border-white rounded-xl bg-darker">
+    <div className="h-64 max-w-lg w-full p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-darker">
       <div className="basis-1/2 flex flex-row justify-between items-start relative">
           <p className="font-body text-md font-light">OPTION {optionNumber}</p>
           <Image src={icon} width={64} height={64} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
@@ -239,28 +239,40 @@ const OptionsCard = ({ optionNumber, introText, title, icon }) => {
 
 const Footer = () => {
   return (
-    <footer className='bg-grey-200'>
-      <div className='flex flex-row justify-between'>
-        <div>XP LOGO VERTICAL</div>
-        <div>
-          <p>XP TICKETS</p>
-          <p>Sell Your Tickets</p>
-          <p>Upcoming Events</p>
-          <p>Terms & Conditions</p>
+    <footer className='h-96 flex flex-col bg-darker px-24 border-t border-light-beige'>
+      <div className='flex-1 flex flex-row justify-start items-center gap-12 border-b border-light-beige'>
+        <Image src="/images/xp_vertical.png" width={96} height={96} className="self-center mr-16" style={{ filter: 'drop-shadow(0 0 40px rgba(247, 240, 199, 0.75))'}}/>
+        <div className="flex flex-col gap-6">
+          <p className="font-display">XP TICKETS</p>
+          <p className="font-body text-sm font-light">About XP</p>
+          <p className="font-body text-sm font-light">Upcoming Events</p>
+          <p className="font-body text-sm font-light">Sell Your Tickets</p>
         </div>
-        <div>
-          <p>STAY IN THE KNOW</p>
-          <p>DISCORD TWITTER LOGO</p>
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-row gap-4">
+            <Image src="/images/twitter.png" width={32} height={32} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
+            <Image src="/images/discord.png" width={32} height={32} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
+            <Image src="/images/threads.png" width={32} height={32} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
+            <Image src="/images/discord.png" width={32} height={32} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
+          </div>
+          <p className="font-body text-sm font-light">Tamperproof</p>
+          <p className="font-body text-sm font-light">Captain Labs</p>
+          <p className="font-body text-sm font-light">Contact Us</p>
         </div>
-        <div className='flex flex-col gap-2'>
-          <p>GET EARLY ACCESS</p>
-          <input type='text' placeholder='Name' />
-          <input type='text' placeholder='Email '/>
-          <button>KEEP ME UPDATED</button>
+        <div className='flex-1 flex flex-row justify-end'>
+          <div className="max-w-md w-full flex flex-col gap-3">
+          <p className="font-display text-xl">STAY IN THE KNOW</p>
+            <input type='text' placeholder='Name' className="px-5 py-2.5 rounded-lg bg-dark font-body text-sm font-light placeholder-beige border border-light-beige" />
+            <input type='text' placeholder='Email' className="px-5 py-2.5 rounded-lg bg-dark font-body text-sm font-light placeholder-beige border border-light-beige" />
+            <button className="py-4 rounded-lg bg-beige font-display text-dark">REQUEST EARLY ACCESS</button>
+          </div>
         </div>
       </div>
-      <div className='flex flex-row justify-center items-center'>
-        <p>XP by Captain | 2023 All Rights Reserved</p>
+      <div className='py-8 flex flex-row justify-center items-center'>
+        <p className="font-body text-sm font-light">
+          XP by Captain
+          <span className="text-light-beige"> / 2023 All Rights Reserved</span>
+        </p>
       </div>
     </footer>
   )

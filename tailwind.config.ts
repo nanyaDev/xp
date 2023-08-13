@@ -20,8 +20,10 @@ const config: Config = {
       },
       colors: {
         beige: '#ffe9d2',
+        'light-beige': 'rgba(247, 240, 199, 0.30)',
         darkest: '#1e1e1e',
         darker: '#252525',
+        dark: '#2c2c2c',
       },
     },
   },
