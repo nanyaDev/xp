@@ -25,6 +25,20 @@ const config: Config = {
         darker: '#252525',
         dark: '#2c2c2c',
       },
+      keyframes: {
+        'slide-left': {
+          '0%': { transform: 'translate(0)' },
+          '100%': { transform: 'translate(-50%)' },
+        },
+        'slide-right': {
+          '0%': { transform: 'translate(-50%)' },
+          '100%': { transform: 'translate(0)' },
+        },
+      },
+      animation: {
+        'slide-left': 'slide-left 30s linear infinite',
+        'slide-right': 'slide-right 30s linear infinite',
+      }
     },
   },
   plugins: [],
