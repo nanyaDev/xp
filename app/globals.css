@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .glow-md {
+    text-shadow: 0 0 40px rgba(247, 240, 199, 0.60);
+  }
+
+  .glow-lg {
+    text-shadow: 0 0 40px rgba(247, 240, 199, 0.75);
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
