@@ -223,7 +223,9 @@ const Comparison = () => {
     <section className='min-h-screen p-16 flex flex-row justify-center items-center bg-darkest'>
       <div className="flex flex-row justify-center items-stretch gap-16">
         <div className="basis-2/5 max-w-md flex flex-col justify-between gap-4">
-          <EventCard name="ARIANA GRANDE" location="Saratoga" price={504} imageSrc="/images/ariana_grande.jpg" />
+          <div className="flex-1 flex flex-row items-stretch">
+            <EventCard name="ARIANA GRANDE" location="Saratoga" price={504} imageSrc="/images/ariana_grande.jpg" />
+          </div>
           <div className="flex flex-col gap-5 relative">
             <div className="px-7 py-4 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
               <span className="font-body text-xs text-red-600 glow-red">TICKETMASTER</span>
@@ -239,7 +241,7 @@ const Comparison = () => {
             </div>
             <div className="px-7 py-4 flex flex-row justify-between items-stretch border border-green-600 rounded-lg" style={{backgroundColor: '#113823'}}>
               <span className="flex-1 relative -m-2">
-                <Image alt="" src="/images/logo.png" fill objectFit="contain" objectPosition="left" />page
+                <Image alt="" src="/images/logo.png" fill objectFit="contain" objectPosition="left" />
               </span>
               <span className="font-display text-xl font-extrabold leading-2 text-green-400 glow-green">504.00 USDC</span>
             </div>
