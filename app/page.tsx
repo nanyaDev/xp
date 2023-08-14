@@ -160,7 +160,7 @@ interface CityCardProps {
 
 const CityCard = ({ city, ticketCount, icon }: CityCardProps) => {
   return (
-    <div className="flex-1 p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-darker shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
+    <div className="max-w-md w-full p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-darker shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
       <div className="basis-1/2 pb-3 flex flex-row justify-end items-stretch">
         <div className="basis-1/4 relative">
           <Image alt="" src={icon} fill objectFit="contain" objectPosition="top right" style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
