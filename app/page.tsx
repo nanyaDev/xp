@@ -160,7 +160,7 @@ interface CityCardProps {
 
 const CityCard = ({ city, ticketCount, icon }: CityCardProps) => {
   return (
-    <div className="max-w-md w-full p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-darker shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
+    <div className="max-w-md lg:max-w-xl w-full p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-darker shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
       <div className="basis-1/2 pb-3 flex flex-row justify-end items-stretch">
         <div className="basis-1/4 relative">
           <Image alt="" src={icon} fill objectFit="contain" objectPosition="top right" style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
@@ -191,7 +191,7 @@ interface EventCardProps {
 
 const EventCard = ({ name, location, price, imageSrc  }: EventCardProps) => {
   return (
-    <div className="max-w-md w-full flex-1 flex flex-col border border-light-beige rounded-lg bg-darker overflow-hidden shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
+    <div className="max-w-md lg:max-w-xl w-full flex flex-col border border-light-beige rounded-lg bg-darker overflow-hidden shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
       <div className="flex-1 relative">
         <Image alt="" src={imageSrc} fill objectFit="cover" objectPosition="top" />
         <div className="flex flex-col border border-beige rounded-md absolute bottom-4 left-4 bg-dark/50 shadow-md shadow-black/25">
