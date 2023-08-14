@@ -164,7 +164,7 @@ const CityCard = ({ city, ticketCount, icon }) => {
 
 const EventCard = ({ name, location, price, imageSrc, date }) => {
   return (
-    <div className="w-96 flex-1 flex flex-col border border-light-beige rounded-lg bg-darker overflow-hidden shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
+    <div className="max-w-md w-full flex-1 flex flex-col border border-light-beige rounded-lg bg-darker overflow-hidden shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
       <div className="flex-1 relative">
         <Image alt="" src={imageSrc} alt="" fill objectFit="cover" objectPosition="top" />
         <div className="flex flex-col border border-beige rounded-md absolute bottom-4 left-4 bg-dark/50 shadow-md shadow-black/25">
@@ -196,22 +196,22 @@ const Comparison = () => {
     <section className='min-h-screen p-16 flex flex-row justify-center items-center bg-darkest'>
       <div className="flex flex-row justify-center items-stretch gap-16">
         <div className="basis-2/5 max-w-md flex flex-col justify-between gap-4">
-          <EventCard name="NATE BARZGATE" location="Saratoga" price={130} imageSrc="/images/nate_barzgate.jpg" />
+          <EventCard name="ARIANA GRANDE" location="Saratoga" price={504} imageSrc="/images/ariana_grande.jpg" date={[18,"AUG"]} />
           <div className="flex flex-col gap-5 relative">
-            <div className="px-7 py-3 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
+            <div className="px-7 py-4 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
               <span className="font-body text-xs text-red-600 glow-red">TICKETMASTER</span>
               <span className="font-display text-xl font-extrabold leading-2 text-red-600 glow-red">$654.85</span>
             </div>
-            <div className="px-7 py-3 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
+            <div className="px-7 py-4 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
               <span className="font-body text-xs text-red-600 glow-red">VIVID SEATS</span>
               <span className="font-display text-xl font-extrabold leading-2 text-red-600 glow-red">$654.85</span>
             </div>
-            <div className="px-7 py-3 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
+            <div className="px-7 py-4 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
               <span className="font-body text-xs text-red-600 glow-red">TICKPICK</span>
               <span className="font-display text-xl font-extrabold leading-2 text-red-600 glow-red">$550.00</span>
             </div>
-            <div className="px-7 py-3 flex flex-row justify-between items-stretch border border-green-600 rounded-lg" style={{backgroundColor: '#113823'}}>
-              <span className="flex-1 relative">
+            <div className="px-7 py-4 flex flex-row justify-between items-stretch border border-green-600 rounded-lg" style={{backgroundColor: '#113823'}}>
+              <span className="flex-1 relative -m-2">
                 <Image alt="" src="/images/logo.png" alt="XP Logo" fill objectFit="contain" objectPosition="left" />
               </span>
               <span className="font-display text-xl font-extrabold leading-2 text-green-400 glow-green">504.00 USDC</span>
@@ -247,7 +247,7 @@ const CTA = () => {
       <div className="w-full flex flex-row justify-center items-stretch gap-6">
         <OptionsCard optionNumber={1} introText="BUY AN XP CHIP ON" title="TENSOR" icon="/images/tensor.png" />
         <p className="flex flex-col justify-center font-body">OR</p>
-        <OptionsCard optionNumber={2} introText="JOIN OUR" title="WAITLIST" icon="/images/logo.png" />
+        <OptionsCard optionNumber={2} introText="JOIN OUR" title="WAITLIST" icon="/images/xp.png" />
       </div>
     </section>
   )
@@ -258,7 +258,9 @@ const OptionsCard = ({ optionNumber, introText, title, icon }) => {
     <div className="h-64 max-w-lg w-full p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-darker shadow-lg shadow-black/25">
       <div className="basis-1/2 flex flex-row justify-between items-start relative">
           <p className="font-body text-md font-light">OPTION {optionNumber}</p>
-          <Image alt="" src={icon} width={64} height={64} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
+          <div className="h-8 flex-1 relative">
+            <Image alt="" src={icon} fill objectFit="contain" objectPosition="right" className="glow-icon" />
+          </div>
       </div>
       <div className="basis-1/2 flex flex-col justify-end gap-3">
         <p className="font-body text-sm font-light">{introText}</p>
