@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 
 export default function Home() {
   return (
@@ -90,28 +91,32 @@ const Carousels = () => {
         <p className="font-body font-light text-xs"><span className="underline underline-offset-2 decoration-0">Sign in</span> to view all avaiable tickets</p>
       </div>
       <Carousel1>
-        <EventCard name="THE OFFSPRING" location="Soldier Field" price={130} imageSrc="/images/the_offspring.jpg" date={[1,"SEP"]} />
+        <EventCard name="THE OFFSPRING" location="Soldier Field" price={130} imageSrc="/images/the_offspring.jpg" />
         <CityCard city="CHICAGO" ticketCount={7290} icon="/images/chicago.png" />
-        <EventCard name="LAKERS VS. WARRIORS" location="Saratoga" price={130} imageSrc="/images/lakers_vs_warriors.jpg" date={[30,"AUG"]} />
-        <EventCard name="KENDRICK LAMAR" location="Soldier Field" price={130} imageSrc="/images/kendrick_lamar.jpg" date={[3,"SEP"]} />
+        <EventCard name="LAKERS VS. WARRIORS" location="Saratoga" price={130} imageSrc="/images/lakers_vs_warriors.jpg" />
+        <EventCard name="KENDRICK LAMAR" location="Soldier Field" price={130} imageSrc="/images/kendrick_lamar.jpg" />
       </Carousel1>
       <Carousel2>
-        <EventCard name="BLACKHAWKS VS. FLAMES" location="Saratoga" price={130} imageSrc="/images/blackhawks_flames.jpg" date={[5,"OCT"]} />
-        <EventCard name="ARIANA GRANDE" location="Saratoga" price={130} imageSrc="/images/ariana_grande.jpg" date={[18,"AUG"]} />
+        <EventCard name="BLACKHAWKS VS. FLAMES" location="Saratoga" price={130} imageSrc="/images/blackhawks_flames.jpg" />
+        <EventCard name="ARIANA GRANDE" location="Saratoga" price={130} imageSrc="/images/ariana_grande.jpg" />
         <CityCard city="NEW YORK" ticketCount={7290} icon="/images/new_york.png" />
-        <EventCard name="MANUEL TURIZO" location="Saratoga" price={130} imageSrc="/images/manuel_torizo.jpg" date={[27,"AUG"]} />
+        <EventCard name="MANUEL TURIZO" location="Saratoga" price={130} imageSrc="/images/manuel_torizo.jpg" />
       </Carousel2>
       <Carousel3>
         <CityCard city="MIAMI" ticketCount={7290} icon="/images/miami.png" />
-        <EventCard name="DAVE CHAPPELLE" location="Saratoga" price={130} imageSrc="/images/dave_chappelle.jpg" date={[2,"NOV"]} />
-        <EventCard name="DJOKOVIC VS. ALCARAZ" location="Saratoga" price={130} imageSrc="/images/djokovic.jpg" date={[15,"AUG"]} />
-        <EventCard name="NATE BARZGATE" location="Saratoga" price={130} imageSrc="/images/nate_barzgate.webp" date={[22,"AUG"]} />
+        <EventCard name="DAVE CHAPPELLE" location="Saratoga" price={130} imageSrc="/images/dave_chappelle.jpg" />
+        <EventCard name="DJOKOVIC VS. ALCARAZ" location="Saratoga" price={130} imageSrc="/images/djokovic.jpg" />
+        <EventCard name="NATE BARZGATE" location="Saratoga" price={130} imageSrc="/images/nate_barzgate.webp" />
       </Carousel3>
     </section>
   )
 }
 
-const Carousel1 = ({ children }) => {
+interface Carousel1Props {
+  children: React.ReactNode;
+}
+
+const Carousel1 = ({ children }: Carousel1Props) => {
   return (
     <div className={`flex-1 flex flex-row justify-between items-stretch gap-6 animate-slide-1`}style={{ width: '200vw' }}>
       { children }
@@ -120,7 +125,11 @@ const Carousel1 = ({ children }) => {
   )
 }
 
-const Carousel2 = ({ children }) => {
+interface Carousel2Props {
+  children: React.ReactNode;
+}
+
+const Carousel2 = ({ children }: Carousel2Props) => {
   return (
     <div className={`flex-1 flex flex-row justify-between items-stretch gap-6 animate-slide-2`}style={{ width: '200vw' }}>
       { children }
@@ -129,7 +138,11 @@ const Carousel2 = ({ children }) => {
   )
 }
 
-const Carousel3 = ({ children }) => {
+interface Carousel3Props {
+  children: React.ReactNode;
+}
+
+const Carousel3 = ({ children }: Carousel3Props) => {
   return (
     <div className={`flex-1 flex flex-row justify-between items-stretch gap-6 animate-slide-3`}style={{ width: '200vw' }}>
       { children }
@@ -138,7 +151,14 @@ const Carousel3 = ({ children }) => {
   )
 }
 
-const CityCard = ({ city, ticketCount, icon }) => {
+interface CityCardProps {
+  city: string;
+  ticketCount: number;
+  icon: string;
+}
+
+
+const CityCard = ({ city, ticketCount, icon }: CityCardProps) => {
   return (
     <div className="flex-1 p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-darker shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
       <div className="basis-1/2 pb-3 flex flex-row justify-end items-stretch">
@@ -162,7 +182,14 @@ const CityCard = ({ city, ticketCount, icon }) => {
   )
 }
 
-const EventCard = ({ name, location, price, imageSrc, date }) => {
+interface EventCardProps {
+  name: string;
+  location: string;
+  price: number;
+  imageSrc: string;
+}
+
+const EventCard = ({ name, location, price, imageSrc  }: EventCardProps) => {
   return (
     <div className="max-w-md w-full flex-1 flex flex-col border border-light-beige rounded-lg bg-darker overflow-hidden shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
       <div className="flex-1 relative">
@@ -196,7 +223,7 @@ const Comparison = () => {
     <section className='min-h-screen p-16 flex flex-row justify-center items-center bg-darkest'>
       <div className="flex flex-row justify-center items-stretch gap-16">
         <div className="basis-2/5 max-w-md flex flex-col justify-between gap-4">
-          <EventCard name="ARIANA GRANDE" location="Saratoga" price={504} imageSrc="/images/ariana_grande.jpg" date={[18,"AUG"]} />
+          <EventCard name="ARIANA GRANDE" location="Saratoga" price={504} imageSrc="/images/ariana_grande.jpg" />
           <div className="flex flex-col gap-5 relative">
             <div className="px-7 py-4 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
               <span className="font-body text-xs text-red-600 glow-red">TICKETMASTER</span>
@@ -253,7 +280,14 @@ const CTA = () => {
   )
 }
 
-const OptionsCard = ({ optionNumber, introText, title, icon }) => {
+interface OptionsCard {
+  optionNumber: number;
+  introText: string;
+  title: string;
+  icon: string;
+}
+
+const OptionsCard = ({ optionNumber, introText, title, icon }: OptionsCard) => {
   return (
     <div className="h-64 max-w-lg w-full p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-darker shadow-lg shadow-black/25">
       <div className="basis-1/2 flex flex-row justify-between items-start relative">
