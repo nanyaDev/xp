@@ -10,6 +10,14 @@
   .glow-lg {
     text-shadow: 0 0 40px rgba(247, 240, 199, 0.75);
   }
+
+  .glow-red {
+    text-shadow: 0px 0px 40px rgba(255, 0, 0, 1);
+  }
+   
+  .glow-green {
+    text-shadow: 0px 0px 40px rgba(0, 255, 10, 1);
+  }
 }
 
 :root {

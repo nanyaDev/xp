@@ -36,8 +36,9 @@ const config: Config = {
         },
       },
       animation: {
-        'slide-left': 'slide-left 40s linear infinite',
-        'slide-right': 'slide-right 65s linear infinite',
+        'slide-1': 'slide-left 45s linear infinite',
+        'slide-2': 'slide-right 70s linear infinite',
+        'slide-3': 'slide-left 24s linear infinite',
       }
     },
   },
