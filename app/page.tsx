@@ -4,6 +4,11 @@ import React from "react";
 export default function Home() {
   return (
     <main className='flex flex-col items-stretch relative'>
+      <div className="fixed left-0 right-0 top-0 h-screen -z-10">
+        <div className="w-full h-full relative">
+          <Image alt="" src="/images/background.png" objectFit="cover" fill />
+        </div>
+      </div>
       <Header />
       <Splash /> 
       <Carousels />
@@ -36,7 +41,6 @@ const Header = () => {
 const Splash = () => {
   return (
     <section className="flex flex-col items-center relative">
-      <Image alt="" src="/images/background.png" objectFit="cover" fill className="-z-10" />
       <div className="max-w-screen-2xl w-full px-8 flex flex-col items-stretch">
         <div className='min-h-screen py-16 flex flex-col items-stretch'>
           <div className="flex-1 flex flex-row items-stretch">
@@ -85,7 +89,7 @@ const Splash = () => {
 
 const Carousels = () => {
   return (
-    <section className='min-h-screen py-16 flex flex-col gap-8 justify-center items-stretch bg-darkest overflow-hidden'>
+    <section className='min-h-screen py-16 flex flex-col gap-8 justify-center items-stretch overflow-hidden'>
       <div className="flex flex-col items-center gap-2">
         <p className="font-display text-4xl glow-lg">RECENTLY LISTED ON XP</p>
         <p className="font-body font-light text-xs"><span className="underline underline-offset-2 decoration-0">Sign in</span> to view all avaiable tickets</p>
@@ -160,7 +164,7 @@ interface CityCardProps {
 
 const CityCard = ({ city, ticketCount, icon }: CityCardProps) => {
   return (
-    <div className="max-w-md lg:max-w-xl w-full p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-darker shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
+    <div className="max-w-md lg:max-w-xl w-full p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-glass backdrop-blur-lg shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
       <div className="basis-1/2 pb-3 flex flex-row justify-end items-stretch">
         <div className="basis-1/4 relative">
           <Image alt="" src={icon} fill objectFit="contain" objectPosition="top right" style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
@@ -191,7 +195,7 @@ interface EventCardProps {
 
 const EventCard = ({ name, location, price, imageSrc  }: EventCardProps) => {
   return (
-    <div className="max-w-md lg:max-w-xl w-full flex flex-col border border-light-beige rounded-lg bg-darker overflow-hidden shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
+    <div className="max-w-md lg:max-w-xl w-full flex flex-col border border-light-beige rounded-lg bg-glass  overflow-hidden shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
       <div className="flex-1 relative">
         <Image alt="" src={imageSrc} fill objectFit="cover" objectPosition="top" />
         <div className="flex flex-col border border-beige rounded-md absolute bottom-4 left-4 bg-dark/50 shadow-md shadow-black/25">
@@ -212,7 +216,6 @@ const EventCard = ({ name, location, price, imageSrc  }: EventCardProps) => {
             <Image alt="" src="/images/chevron.svg" height={12} width={12} />
           </h3>
         </div>
-
       </div>
     </div>
   )
@@ -220,35 +223,35 @@ const EventCard = ({ name, location, price, imageSrc  }: EventCardProps) => {
 
 const Comparison = () => {
   return (
-    <section className='min-h-screen p-16 flex flex-row justify-center items-center bg-darkest'>
+    <section className="pt-48 flex flex-row justify-center items-center">
       <div className="flex flex-row justify-center items-stretch gap-16">
-        <div className="basis-2/5 max-w-md flex flex-col justify-between gap-4">
+        <div className="max-w-md w-full flex flex-col justify-between gap-4">
           <div className="flex-1 flex flex-row items-stretch">
             <EventCard name="ARIANA GRANDE" location="Saratoga" price={504} imageSrc="/images/ariana_grande.jpg" />
           </div>
           <div className="flex flex-col gap-5 relative">
-            <div className="px-7 py-4 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
+            <div className="px-7 py-4 flex flex-row justify-between items-center border border-red-600 rounded-lg bg-red-glass">
               <span className="font-body text-xs text-red-600 glow-red">TICKETMASTER</span>
               <span className="font-display text-xl font-extrabold leading-2 text-red-600 glow-red">$654.85</span>
             </div>
-            <div className="px-7 py-4 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
+            <div className="px-7 py-4 flex flex-row justify-between items-center border border-red-600 rounded-lg bg-red-glass">
               <span className="font-body text-xs text-red-600 glow-red">VIVID SEATS</span>
               <span className="font-display text-xl font-extrabold leading-2 text-red-600 glow-red">$654.85</span>
             </div>
-            <div className="px-7 py-4 flex flex-row justify-between items-center border border-red-600 rounded-lg" style={{backgroundColor: '#271212'}}>
+            <div className="px-7 py-4 flex flex-row justify-between items-center border border-red-600 rounded-lg bg-red-glass">
               <span className="font-body text-xs text-red-600 glow-red">TICKPICK</span>
               <span className="font-display text-xl font-extrabold leading-2 text-red-600 glow-red">$550.00</span>
             </div>
-            <div className="px-7 py-4 flex flex-row justify-between items-stretch border border-green-600 rounded-lg" style={{backgroundColor: '#113823'}}>
+            <div className="px-7 py-4 flex flex-row justify-between items-stretch border border-green-600 rounded-lg bg-green-glass">
               <span className="flex-1 relative -m-2">
                 <Image alt="" src="/images/logo.png" fill objectFit="contain" objectPosition="left" />
               </span>
               <span className="font-display text-xl font-extrabold leading-2 text-green-400 glow-green">504.00 USDC</span>
             </div>
-            <p className="font-body text-sm font-light text-light-beige absolute -bottom-12 w-full text-center">SNAPSHOT TAKEN AT 15:32PM, AUG 8, 2023</p>
+            <p className="font-body text-sm font-light text-beige/75 absolute -bottom-12 w-full text-center">SNAPSHOT TAKEN AT 15:32PM, AUG 8, 2023</p>
           </div>
         </div>
-        <div className="basis-3/5 max-w-3xl px-16 py-10 flex flex-col gap-8 items-start rounded-xl bg-darker border border-light-beige">
+        <div className="max-w-4xl w-full px-16 py-10 flex flex-col gap-8 items-start rounded-xl bg-glass border border-light-beige">
           <h3 className="font-display text-4xl glow-lg">
             YOU&apos;RE GETTING<br /> 
             HUSTLED BY WEB2<br /> 
@@ -266,7 +269,7 @@ const Comparison = () => {
 
 const CTA = () => {
   return (
-    <section className='min-h-screen flex flex-col justify-center items-center gap-8 bg-darkest'>
+    <section className="py-80 flex flex-col justify-center items-center gap-8">
       <div className="flex flex-col items-center gap-2">
         <h4 className="font-display text-md glow-md">JOIN US AS WE BUILD</h4>
         <h3 className="font-display text-4xl glow-lg">GET EARLY ACCESS TO XP</h3>
@@ -291,7 +294,7 @@ interface OptionsCard {
 
 const OptionsCard = ({ optionNumber, introText, title, icon }: OptionsCard) => {
   return (
-    <div className="h-64 max-w-lg w-full p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-darker shadow-lg shadow-black/25">
+    <div className="h-64 max-w-lg w-full p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-glass shadow-lg shadow-black/25">
       <div className="basis-1/2 flex flex-row justify-between items-start relative">
           <p className="font-body text-md font-light">OPTION {optionNumber}</p>
           <div className="h-8 flex-1 relative">
@@ -313,7 +316,7 @@ const OptionsCard = ({ optionNumber, introText, title, icon }: OptionsCard) => {
 
 const Footer = () => {
   return (
-    <footer className='h-96 flex flex-col bg-darker px-24 border-t border-light-beige'>
+    <footer className="h-96 flex flex-col bg-glass px-24 border-t border-light-beige">
       <div className='flex-1 flex flex-row justify-start items-center gap-12 border-b border-light-beige'>
         <Image alt="" src="/images/xp_vertical.png" width={96} height={96} className="self-center mr-16" style={{ filter: 'drop-shadow(0 0 40px rgba(247, 240, 199, 0.75))'}}/>
         <div className="flex flex-col gap-6">
@@ -336,8 +339,8 @@ const Footer = () => {
         <div className='flex-1 flex flex-row justify-end'>
           <div className="max-w-md w-full flex flex-col gap-3">
           <p className="font-display text-xl">STAY IN THE KNOW</p>
-            <input type='text' placeholder='Name' className="px-5 py-2.5 rounded-lg bg-dark font-body text-sm font-light placeholder-beige border border-light-beige" />
-            <input type='text' placeholder='Email' className="px-5 py-2.5 rounded-lg bg-dark font-body text-sm font-light placeholder-beige border border-light-beige" />
+            <input type='text' placeholder='Name' className="px-5 py-2.5 rounded-lg bg-dark/50 font-body text-sm font-light placeholder-beige border border-light-beige" />
+            <input type='text' placeholder='Email' className="px-5 py-2.5 rounded-lg bg-dark/50 font-body text-sm font-light placeholder-beige border border-light-beige" />
             <button className="py-4 rounded-lg bg-beige font-display text-dark">REQUEST EARLY ACCESS</button>
           </div>
         </div>
@@ -345,7 +348,7 @@ const Footer = () => {
       <div className='py-8 flex flex-row justify-center items-center'>
         <p className="font-body text-sm font-light">
           XP by Captain
-          <span className="text-light-beige"> / 2023 All Rights Reserved</span>
+          <span className="text-beige/50"> / 2023 All Rights Reserved</span>
         </p>
       </div>
     </footer>

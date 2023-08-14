@@ -22,6 +22,21 @@
   .glow-icon {
      filter: drop-shadow(0 0 30px rgba(247, 240, 199));
   }
+
+  .bg-glass {
+    background-color: rgba(64, 64, 64, 0.35);
+    backdrop-filter: blur(12px);
+  }
+
+  .bg-red-glass {
+    background-color: rgba(64, 0, 0, 0.4 );
+    backdrop-filter: blur(16px);
+  }
+
+  .bg-green-glass {
+    background-color: rgba(0, 64, 0, 0.4);
+    backdrop-filter: blur(16px);
+  }
 }
 
 :root {
