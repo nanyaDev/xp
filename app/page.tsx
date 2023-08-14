@@ -17,13 +17,13 @@ const Header = () => {
   return (
     <header className="py-6 w-full flex flex-col items-center bg-black/40 absolute">
       <div className="max-w-screen-2xl w-full px-8 flex flex-row justify-between items-center">
-        <Image alt="" src="/images/logo.png" alt="XP Logo" width="64" height="64" />
+        <Image alt="" src="/images/logo.png" width="64" height="64" />
         <div className='flex flex-row justify-between items-center gap-12'>
           <div className="font-body text-xs font-light">Upcoming Events</div>
           <div className="font-body text-xs font-light">Sell Your Tickets</div>
           <div className="font-body text-xs flex flex-row items-center gap-2">
             <span className="font-body text-xs font-light">Join Discord</span>
-            <Image alt="" src="/images/discord.png" alt="Discord Logo" width="30" height="30" />
+            <Image alt="" src="/images/discord.png" width="30" height="30" />
           </div>
           <button className="px-4 py-2 font-body text-xs font-semibold border border-light-beige rounded-lg bg-dark/75 backdrop-blur-md">Connect Wallet / Sign In</button>
         </div>
@@ -60,7 +60,7 @@ const Splash = () => {
             <div className="flex-1 flex">
               <div className="flex-1 p-16 flex">
                 <div className="flex-1 relative">
-                  <Image alt="" src="/images/xp_tiles.png" alt="XP tiles" fill objectFit="contain" objectPosition="center"/>
+                  <Image alt="" src="/images/xp_tiles.png" fill objectFit="contain" objectPosition="center"/>
                 </div>
               </div>
             </div>
@@ -166,7 +166,7 @@ const EventCard = ({ name, location, price, imageSrc, date }) => {
   return (
     <div className="max-w-md w-full flex-1 flex flex-col border border-light-beige rounded-lg bg-darker overflow-hidden shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
       <div className="flex-1 relative">
-        <Image alt="" src={imageSrc} alt="" fill objectFit="cover" objectPosition="top" />
+        <Image alt="" src={imageSrc} fill objectFit="cover" objectPosition="top" />
         <div className="flex flex-col border border-beige rounded-md absolute bottom-4 left-4 bg-dark/50 shadow-md shadow-black/25">
           <div className="font-display text-center border-b" style={{ fontSize: '6px' }}>SEP</div>
           <div className="px-1.5 font-display text-lg text-center">13</div>
@@ -212,7 +212,7 @@ const Comparison = () => {
             </div>
             <div className="px-7 py-4 flex flex-row justify-between items-stretch border border-green-600 rounded-lg" style={{backgroundColor: '#113823'}}>
               <span className="flex-1 relative -m-2">
-                <Image alt="" src="/images/logo.png" alt="XP Logo" fill objectFit="contain" objectPosition="left" />
+                <Image alt="" src="/images/logo.png" fill objectFit="contain" objectPosition="left" />page
               </span>
               <span className="font-display text-xl font-extrabold leading-2 text-green-400 glow-green">504.00 USDC</span>
             </div>
@@ -221,11 +221,11 @@ const Comparison = () => {
         </div>
         <div className="basis-3/5 max-w-3xl px-16 py-10 flex flex-col gap-8 items-start rounded-xl bg-darker border border-light-beige">
           <h3 className="font-display text-4xl glow-lg">
-            YOU'RE GETTING<br /> 
+            YOU&apos;RE GETTING<br /> 
             HUSTLED BY WEB2<br /> 
             TICKET SITES
           </h3>
-          <p className="font-body text-sm font-light leading-7 glow-md">Maybe you paid way too much for your girlfriend's Taylor Swift tickets. Or, maybe you got scammed by those Lollpalooza tickets on Facebook, which you <span className="font-semibold italic">knew</span> seemed shady but were too cheap to pass up.</p>
+          <p className="font-body text-sm font-light leading-7 glow-md">Maybe you paid way too much for your girlfriend&apos;s Taylor Swift tickets. Or, maybe you got scammed by those Lollpalooza tickets on Facebook, which you <span className="font-semibold italic">knew</span> seemed shady but were too cheap to pass up.</p>
           <p className="font-body text-sm font-light leading-7 glow-md">XP gives you 100% authenticated tickets at the fairest most transparent prices by porting verified tickets from Web2 onto the blockchain using our proprietary <span className="underline underline-offset-2">Tamperproof technology</span>.</p>
           <p className="font-display text-xl glow-lg">THIS IS THE WAY.</p>
           <p className="mt-8 font-display text-sm glow-lg underline underline-offset-2">WHY BLOCKCHAIN?</p>
