@@ -82,7 +82,7 @@ const Splash = () => {
 
 const Carousels = () => {
   return (
-    <section className='min-h-screen py-16 flex flex-col gap-8 justify-center items-stretch bg-darkest'>
+    <section className='min-h-screen py-16 flex flex-col gap-8 justify-center items-stretch bg-darkest overflow-hidden'>
       <div className="flex flex-col items-center gap-2">
         <p className="font-display text-4xl glow-lg">RECENTLY LISTED ON XP</p>
         <p className="font-body font-light text-xs"><span className="underline underline-offset-2 decoration-0">Sign in</span> to view all avaiable tickets</p>
@@ -129,7 +129,7 @@ const CarouselRight = ({ children }) => {
 
 const CityCard = ({ city, ticketCount, icon }) => {
   return (
-    <div className="flex-1 p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-darker shadow-lg shadow-black/25">
+    <div className="flex-1 p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-darker shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
       <div className="basis-1/2 pb-3 flex flex-row justify-end items-stretch">
         <div className="basis-1/4 relative">
           <Image src={icon} fill objectFit="contain" objectPosition="top right" style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
@@ -153,7 +153,7 @@ const CityCard = ({ city, ticketCount, icon }) => {
 
 const EventCard = ({ name, location, price, imageSrc }) => {
   return (
-    <div className="w-96 flex-1 flex flex-col border border-light-beige rounded-lg bg-darker overflow-hidden shadow-lg shadow-black/25">
+    <div className="w-96 flex-1 flex flex-col border border-light-beige rounded-lg bg-darker overflow-hidden shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
       <div className="basis-3/5 relative">
         <Image src={imageSrc} alt="" fill objectFit="cover" objectPosition="top" />
       </div>
