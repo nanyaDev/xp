@@ -61,6 +61,7 @@ const config: Config = {
       animation: {
         'slide-1': 'slide-left 45s linear infinite',
         'slide-2': 'slide-right 70s linear infinite',
+        'slide-3': 'slide-left 24s linear infinite',
         'bounce-text': 'slide-up 10s ease-out infinite',
       }
     },
