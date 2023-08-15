@@ -51,11 +51,11 @@ const Splash = () => {
         <div className='min-h-screen py-16 flex flex-col items-stretch'>
           <div className="flex-1 flex flex-row items-stretch">
             <div className="flex-1 flex flex-col justify-center items-start gap-8">
-              <h1 className="font-display text-6xl glow-lg">
+              <h1 className="font-display text-6xl">
                 <div className="text-2xl">SAY NO TO JUNK FEES:</div>
                 <div>GET WALLET-FRIENDY TICKETS TO</div>
                 <div className="overflow-hidden" style={{ height: '60px' }}>
-                  <div className="flex flex-col gap-5 justify-start animate-bounce-text" style={{ textShadow: 'none'}}>
+                  <div className="flex flex-col gap-5 justify-start animate-bounce-text">
                     <div>DRAKE</div>
                     <div>DOJA CAT</div>
                     <div>ICE SPICE</div>
