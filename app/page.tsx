@@ -37,7 +37,7 @@ const Header = () => {
             <span className="font-body text-xs font-light">Join Discord</span>
             <Image alt="" src="/images/discord.png" width="30" height="30" />
           </a>
-          <button className="px-4 py-2 font-body text-xs font-semibold border border-light-beige rounded-lg bg-dark/75 backdrop-blur-md">Connect Wallet / Sign In</button>
+          <button className="px-4 py-2 font-body text-xs font-semibold border border-light-beige rounded-lg bg-dark/75 backdrop-blur-md transition-colors hover:border-beige hover:bg-darker/75">Connect Wallet / Sign In</button>
         </div>
       </div>
     </header>
@@ -62,7 +62,7 @@ const Splash = () => {
                 middlemen to provide the fairest ticket prices on the web.
               </p>
               <div className="flex flex-col items-start gap-3">
-                <button className="px-8 py-4 flex flex-row gap-2 items-center border border-white/25 rounded-lg bg-white/20 backdrop-blur-md">
+                <button className="px-8 py-4 flex flex-row gap-2 items-center border border-white/25 rounded-lg bg-white/20 backdrop-blur-md transition-colors hover:border-white/50 hover:backdrop-blur-3xl">
                   <p className="font-body font-semibold text-sm">Request Early Access</p>
                 </button>
                 <a href="#" className="font-body font-extralight text-sm underline underline-offset-4 decoration-0">or, connect wallet if you have an XP chip</a>
@@ -101,22 +101,22 @@ const Carousels = () => {
         <p className="font-body font-light text-xs"><span className="underline underline-offset-2 decoration-0">Sign in</span> to view all avaiable tickets</p>
       </div>
       <Carousel1>
-        <EventCard name="THE OFFSPRING" location="Soldier Field" price={130} imageSrc="/images/the_offspring.jpg" />
+        <EventCard name="THE OFFSPRING" location="Soldier Field" price={130} imageSrc="/images/the_offspring.jpg" date="01" month="SEP" />
         <CityCard city="CHICAGO" ticketCount={7290} icon="/images/chicago.png" />
-        <EventCard name="LAKERS VS. WARRIORS" location="Saratoga" price={130} imageSrc="/images/lakers_vs_warriors.jpg" />
-        <EventCard name="KENDRICK LAMAR" location="Soldier Field" price={130} imageSrc="/images/kendrick_lamar.jpg" />
+        <EventCard name="LAKERS VS. WARRIORS" location="Saratoga" price={130} imageSrc="/images/lakers_vs_warriors.jpg" date="22" month="AUG" />
+        <EventCard name="KENDRICK LAMAR" location="Soldier Field" price={130} imageSrc="/images/kendrick_lamar.jpg" date="13" month="NOV" />
       </Carousel1>
       <Carousel2>
-        <EventCard name="BLACKHAWKS VS. FLAMES" location="Saratoga" price={130} imageSrc="/images/blackhawks_flames.jpg" />
-        <EventCard name="ARIANA GRANDE" location="Saratoga" price={130} imageSrc="/images/ariana_grande.jpg" />
+        <EventCard name="BLACKHAWKS VS. FLAMES" location="Saratoga" price={130} imageSrc="/images/blackhawks_flames.jpg" date="18" month="OCT" />
+        <EventCard name="ARIANA GRANDE" location="Saratoga" price={130} imageSrc="/images/ariana_grande.jpg" date="04" month="NOV" />
         <CityCard city="NEW YORK" ticketCount={7290} icon="/images/new_york.png" />
-        <EventCard name="MANUEL TURIZO" location="Saratoga" price={130} imageSrc="/images/manuel_torizo.jpg" />
+        <EventCard name="MANUEL TURIZO" location="Saratoga" price={130} imageSrc="/images/manuel_torizo.jpg" date="29" month="AUG" />
       </Carousel2>
       <Carousel3>
         <CityCard city="MIAMI" ticketCount={7290} icon="/images/miami.png" />
-        <EventCard name="DAVE CHAPPELLE" location="Saratoga" price={130} imageSrc="/images/dave_chappelle.jpg" />
-        <EventCard name="DJOKOVIC VS. ALCARAZ" location="Saratoga" price={130} imageSrc="/images/djokovic.jpg" />
-        <EventCard name="NATE BARZGATE" location="Saratoga" price={130} imageSrc="/images/nate_barzgate.webp" />
+        <EventCard name="DAVE CHAPPELLE" location="Saratoga" price={130} imageSrc="/images/dave_chappelle.jpg" date="01" month="DEC" />
+        <EventCard name="DJOKOVIC VS. ALCARAZ" location="Saratoga" price={130} imageSrc="/images/djokovic.jpg" date="30" month="SEP" />
+        <EventCard name="NATE BARZGATE" location="Saratoga" price={130} imageSrc="/images/nate_barzgate.webp" date="07" month="OCT" />
       </Carousel3>
     </section>
   )
@@ -197,16 +197,18 @@ interface EventCardProps {
   location: string;
   price: number;
   imageSrc: string;
+  date: string;
+  month: string;
 }
 
-const EventCard = ({ name, location, price, imageSrc  }: EventCardProps) => {
+const EventCard = ({ name, location, price, imageSrc, date, month  }: EventCardProps) => {
   return (
     <div className="max-w-md lg:max-w-xl w-full flex flex-col border border-light-beige rounded-lg bg-glass  overflow-hidden shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/30 cursor-pointer">
       <div className="flex-1 relative">
         <Image alt="" src={imageSrc} fill objectFit="cover" objectPosition="top" />
         <div className="flex flex-col border border-beige rounded-md absolute bottom-4 left-4 bg-dark/50 shadow-md shadow-black/25">
-          <div className="font-display text-center border-b" style={{ fontSize: '6px' }}>SEP</div>
-          <div className="px-1.5 font-display text-lg text-center">13</div>
+          <div className="font-display text-center border-b" style={{ fontSize: '6px' }}>{month}</div>
+          <div className="px-1.5 font-display text-lg text-center">{date}</div>
         </div>
       </div>
       <div className="px-6 py-4 flex flex-col gap-2">
@@ -233,7 +235,7 @@ const Comparison = () => {
       <div className="flex flex-row justify-center items-stretch gap-16">
         <div className="max-w-md w-full flex flex-col justify-between gap-4">
           <div className="flex-1 flex flex-row items-stretch">
-            <EventCard name="ARIANA GRANDE" location="Saratoga" price={504} imageSrc="/images/ariana_grande.jpg" />
+            <EventCard name="ARIANA GRANDE" location="Saratoga" price={504} imageSrc="/images/ariana_grande.jpg" date="13" month="SEP" />
           </div>
           <div className="flex flex-col gap-5 relative">
             <div className="px-7 py-4 flex flex-row justify-between items-center border border-red-600 rounded-lg bg-red-glass">
@@ -300,7 +302,7 @@ interface OptionsCard {
 
 const OptionsCard = ({ optionNumber, introText, title, icon }: OptionsCard) => {
   return (
-    <div className="h-64 max-w-lg w-full border border-light-beige rounded-xl bg-glass shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/30 transition-transform hover:-translate-y-2 glass-shine cursor-pointer">
+    <div className="h-64 max-w-lg w-full border border-light-beige rounded-xl bg-glass shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/30 transition-all hover:-translate-y-2 glass-shine cursor-pointer hover:border-beige/40">
       <div className="h-full w-full p-8 flex flex-col justify-between ">
         <div className="basis-1/2 flex flex-row justify-between items-start relative">
           <p className="font-body text-md font-light">OPTION {optionNumber}</p>
