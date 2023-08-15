@@ -4,11 +4,7 @@ import React from "react";
 export default function Home() {
   return (
     <main className='flex flex-col items-stretch relative'>
-      <div className="fixed left-0 right-0 top-0 h-screen -z-10">
-        <div className="w-full h-full relative">
-          <Image alt="" src="/images/background.png" objectFit="cover" fill />
-        </div>
-      </div>
+      <Background />
       <Header />
       <Splash /> 
       <Carousels />
@@ -19,18 +15,28 @@ export default function Home() {
   )
 }
 
+const Background = () => {
+  return (
+    <div className="fixed left-0 right-0 top-0 h-screen -z-10">
+      <div className="w-full h-full relative">
+        <Image alt="" src="/images/background.png" objectFit="cover" fill />
+      </div>
+    </div>
+  )
+}
+
 const Header = () => {
   return (
-    <header className="py-6 w-full flex flex-col items-center bg-black/40 absolute">
+    <header className="py-6 w-full flex flex-col items-center bg-black/40 absolute z-10">
       <div className="max-w-screen-2xl w-full px-8 flex flex-row justify-between items-center">
         <Image alt="" src="/images/logo.png" width="64" height="64" />
         <div className='flex flex-row justify-between items-center gap-12'>
-          <div className="font-body text-xs font-light">Upcoming Events</div>
-          <div className="font-body text-xs font-light">Sell Your Tickets</div>
-          <div className="font-body text-xs flex flex-row items-center gap-2">
+          <a href="#" className="font-body text-xs font-light">Upcoming Events</a>
+          <a href="#" className="font-body text-xs font-light">Sell Your Tickets</a>
+          <a href="#" className="font-body text-xs flex flex-row items-center gap-2">
             <span className="font-body text-xs font-light">Join Discord</span>
             <Image alt="" src="/images/discord.png" width="30" height="30" />
-          </div>
+          </a>
           <button className="px-4 py-2 font-body text-xs font-semibold border border-light-beige rounded-lg bg-dark/75 backdrop-blur-md">Connect Wallet / Sign In</button>
         </div>
       </div>
@@ -59,7 +65,7 @@ const Splash = () => {
                 <button className="px-8 py-4 flex flex-row gap-2 items-center border border-white/25 rounded-lg bg-white/20 backdrop-blur-md">
                   <p className="font-body font-semibold text-sm">Request Early Access</p>
                 </button>
-                <p className="font-body font-extralight text-sm underline underline-offset-4 decoration-0">or, connect wallet if you have an XP chip</p>
+                <a href="#" className="font-body font-extralight text-sm underline underline-offset-4 decoration-0">or, connect wallet if you have an XP chip</a>
               </div>
             </div>
             <div className="flex-1 flex">
@@ -79,7 +85,7 @@ const Splash = () => {
               <Image alt="" src="/images/solana_with_text.svg" height={14} width={98} />
               <Image alt="" src="/images/tensor_with_text.svg" height={27} width={99} />
             </div>
-            <p className="text-center font-body font-extralight text-sm">For press or collab inquiries, <span className="underline underline-offset-4 decoration-0">contact us</span></p>
+            <p className="text-center font-body font-extralight text-sm">For press or collab inquiries, <a href="#" className="underline underline-offset-4 decoration-0">contact us</a></p>
           </div>
         </div>
       </div>
@@ -164,7 +170,7 @@ interface CityCardProps {
 
 const CityCard = ({ city, ticketCount, icon }: CityCardProps) => {
   return (
-    <div className="max-w-md lg:max-w-xl w-full p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-glass backdrop-blur-lg shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
+    <div className="max-w-md lg:max-w-xl w-full p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-glass backdrop-blur-lg shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/30 cursor-pointer">
       <div className="basis-1/2 pb-3 flex flex-row justify-end items-stretch">
         <div className="basis-1/4 relative">
           <Image alt="" src={icon} fill objectFit="contain" objectPosition="top right" style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
@@ -195,7 +201,7 @@ interface EventCardProps {
 
 const EventCard = ({ name, location, price, imageSrc  }: EventCardProps) => {
   return (
-    <div className="max-w-md lg:max-w-xl w-full flex flex-col border border-light-beige rounded-lg bg-glass  overflow-hidden shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/50">
+    <div className="max-w-md lg:max-w-xl w-full flex flex-col border border-light-beige rounded-lg bg-glass  overflow-hidden shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/30 cursor-pointer">
       <div className="flex-1 relative">
         <Image alt="" src={imageSrc} fill objectFit="cover" objectPosition="top" />
         <div className="flex flex-col border border-beige rounded-md absolute bottom-4 left-4 bg-dark/50 shadow-md shadow-black/25">
@@ -294,19 +300,21 @@ interface OptionsCard {
 
 const OptionsCard = ({ optionNumber, introText, title, icon }: OptionsCard) => {
   return (
-    <div className="h-64 max-w-lg w-full p-8 flex flex-col justify-between border border-light-beige rounded-xl bg-glass shadow-lg shadow-black/25">
-      <div className="basis-1/2 flex flex-row justify-between items-start relative">
+    <div className="h-64 max-w-lg w-full border border-light-beige rounded-xl bg-glass shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/30 transition-transform hover:-translate-y-2 glass-shine cursor-pointer">
+      <div className="h-full w-full p-8 flex flex-col justify-between ">
+        <div className="basis-1/2 flex flex-row justify-between items-start relative">
           <p className="font-body text-md font-light">OPTION {optionNumber}</p>
           <div className="h-8 flex-1 relative">
             <Image alt="" src={icon} fill objectFit="contain" objectPosition="right" className="glow-icon" />
           </div>
-      </div>
-      <div className="basis-1/2 flex flex-col justify-end gap-3">
-        <p className="font-body text-sm font-light">{introText}</p>
-        <div className="flex flex-row justify-start items-stretch gap-4">
-          <h3 className="font-display text-4xl underline underline-offset-8" style={{textShadow: '0px 0px 40px rgba(247, 240, 199, 0.75)'}}>{title}</h3>
-          <div className="flex-1 relative">
-            <Image alt="" src="/images/arrow.png" fill objectFit="contain" objectPosition="left" style={{ filter: 'drop-shadow(0 0 40px rgba(247, 240, 199, 0.75))'}}/>
+        </div>
+        <div className="basis-1/2 flex flex-col justify-end gap-3">
+          <p className="font-body text-sm font-light">{introText}</p>
+          <div className="flex flex-row justify-start items-stretch gap-4">
+            <h3 className="font-display text-4xl underline underline-offset-8" style={{textShadow: '0px 0px 40px rgba(247, 240, 199, 0.75)'}}>{title}</h3>
+            <div className="flex-1 relative">
+              <Image alt="" src="/images/arrow.png" fill objectFit="contain" objectPosition="left" style={{ filter: 'drop-shadow(0 0 40px rgba(247, 240, 199, 0.75))'}}/>
+            </div>
           </div>
         </div>
       </div>
@@ -321,26 +329,26 @@ const Footer = () => {
         <Image alt="" src="/images/xp_vertical.png" width={96} height={96} className="self-center mr-16" style={{ filter: 'drop-shadow(0 0 40px rgba(247, 240, 199, 0.75))'}}/>
         <div className="flex flex-col gap-6">
           <p className="font-display">XP TICKETS</p>
-          <p className="font-body text-sm font-light">About XP</p>
-          <p className="font-body text-sm font-light">Upcoming Events</p>
-          <p className="font-body text-sm font-light">Sell Your Tickets</p>
+          <a href="#" className="font-body text-sm font-light">About XP</a>
+          <a href="#" className="font-body text-sm font-light">Upcoming Events</a>
+          <a href="#" className="font-body text-sm font-light">Sell Your Tickets</a>
         </div>
         <div className="flex flex-col gap-6">
           <div className="flex flex-row gap-4">
-            <Image alt="" src="/images/twitter.png" width={32} height={32} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
-            <Image alt="" src="/images/discord.png" width={32} height={32} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
-            <Image alt="" src="/images/threads.png" width={32} height={32} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
-            <Image alt="" src="/images/discord.png" width={32} height={32} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/>
+            <a href="#"><Image alt="" src="/images/twitter.png" width={32} height={32} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/></a>
+            <a href="#"><Image alt="" src="/images/discord.png" width={32} height={32} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/></a>
+            <a href="#"><Image alt="" src="/images/threads.png" width={32} height={32} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/></a>
+            <a href="#"><Image alt="" src="/images/mastodon.png" width={32} height={32} style={{ filter: 'drop-shadow(0 0 30px rgba(247, 240, 199))'}}/></a>
           </div>
-          <p className="font-body text-sm font-light">Tamperproof</p>
-          <p className="font-body text-sm font-light">Captain Labs</p>
-          <p className="font-body text-sm font-light">Contact Us</p>
+          <a href="#" className="font-body text-sm font-light">Tamperproof</a>
+          <a href="#" className="font-body text-sm font-light">Captain Labs</a>
+          <a href="#" className="font-body text-sm font-light">Contact Us</a>
         </div>
         <div className='flex-1 flex flex-row justify-end'>
           <div className="max-w-md w-full flex flex-col gap-3">
           <p className="font-display text-xl">STAY IN THE KNOW</p>
-            <input type='text' placeholder='Name' className="px-5 py-2.5 rounded-lg bg-dark/50 font-body text-sm font-light placeholder-beige border border-light-beige" />
-            <input type='text' placeholder='Email' className="px-5 py-2.5 rounded-lg bg-dark/50 font-body text-sm font-light placeholder-beige border border-light-beige" />
+            <input type='text' placeholder='Name' className="px-5 py-2.5 rounded-lg bg-dark/50 font-body text-sm font-light placeholder-beige border border-light-beige focus-visible:outline-none focus-visible:border-beige" />
+            <input type='text' placeholder='Email' className="px-5 py-2.5 rounded-lg bg-dark/50 font-body text-sm font-light placeholder-beige border border-light-beige focus-visible:outline-none focus-visible:border-beige" />
             <button className="py-4 rounded-lg bg-beige font-display text-dark">REQUEST EARLY ACCESS</button>
           </div>
         </div>

@@ -37,6 +37,31 @@
     background-color: rgba(0, 64, 0, 0.4);
     backdrop-filter: blur(16px);
   }
+
+  .glass-shine {
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      background-color: rgba(256, 256, 256, 0.3);
+      width: 30%;
+      height: 100%;
+      top: 0%;
+      left: -30%;
+
+      position: absolute;
+      transform-origin: bottom;
+      transform: skew(45deg);
+      transition: none;
+    }
+
+    &:hover {      
+      &::before {
+        left: 150%;
+        transition: left 400ms ease-out;
+      }
+    }
+  }
 }
 
 :root {
