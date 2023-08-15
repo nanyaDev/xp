@@ -52,10 +52,18 @@ const Splash = () => {
           <div className="flex-1 flex flex-row items-stretch">
             <div className="flex-1 flex flex-col justify-center items-start gap-8">
               <h1 className="font-display text-6xl glow-lg">
-                BUY<br /> 
-                DRAKE TICKETS<br /> 
-                WITHOUT THE<br /> 
-                JUNK FEES
+                <div className="text-2xl">SAY NO TO JUNK FEES:</div>
+                <div>GET WALLET-FRIENDY TICKETS TO</div>
+                <div className="overflow-hidden" style={{ height: '60px' }}>
+                  <div className="flex flex-col gap-5 justify-start animate-bounce-text" style={{ textShadow: 'none'}}>
+                    <div>DRAKE</div>
+                    <div>DOJA CAT</div>
+                    <div>ICE SPICE</div>
+                    <div>LIL WAYNE</div>
+                    <div>CENTRAL CEE</div>
+                    <div>DRAKE</div>
+                  </div>
+                </div>
               </h1>
               <p className="font-body font-extralight text-sm">
                 By bringing tickets onto the blockchain, XP is cutting out the<br /> 
