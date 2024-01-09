@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import localFont from '@next/font/local'
-import { Roboto_Mono } from '@next/font/google'
+import localFont from "next/font/local"
+import { Roboto_Mono } from "next/font/google"
 
 export const metadata: Metadata = {
   title: 'XP',
